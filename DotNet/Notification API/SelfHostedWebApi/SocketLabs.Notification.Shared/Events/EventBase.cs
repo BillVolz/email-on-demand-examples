@@ -11,7 +11,10 @@ namespace SocketLabs.Notification.Shared.Events
     {
         public EventBase()
         {}
-
+        /// <summary>
+        /// Takes key value pairs and populates the object.
+        /// </summary>
+        /// <param name="formDataCollection"></param>
         public EventBase(IEnumerable<KeyValuePair<string, string>> formDataCollection)
         {
             var allFields = GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance).Where(p => p.CanWrite);
@@ -42,7 +45,10 @@ namespace SocketLabs.Notification.Shared.Events
                 
             }
         }
-
+        /// <summary>
+        /// Converts object to nice string.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             var content = new StringBuilder();
@@ -53,7 +59,10 @@ namespace SocketLabs.Notification.Shared.Events
             }
             return content.ToString();
         }
-
+        /// <summary>
+        /// Converts object to content encoded string safe to send as the post body.
+        /// </summary>
+        /// <returns></returns>
         public FormUrlEncodedContent ToEncodedContent()
         {
             var allItems = new List<KeyValuePair<string, string>>();
