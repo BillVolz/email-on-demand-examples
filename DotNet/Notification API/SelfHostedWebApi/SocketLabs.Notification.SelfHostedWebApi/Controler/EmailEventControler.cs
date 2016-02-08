@@ -1,4 +1,6 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using SocketLabs.Notification.Shared;
@@ -9,28 +11,60 @@ namespace SocketLabs.Notification.SelfHostedWebApi.Controler
     public class EmailEventController : ApiController
     {
         private readonly string _validationKey = ConfigurationManager.AppSettings["ValidationKey"];
-        
-        public string Index(Complaint model)
+
+        private void OnComplaint(Complaint model)
         {
-            return "";
+           Console.WriteLine(model.ToString());
         }
-      
-        public string Index(Delivered model)    
+
+        private void OnDelivered(Delivered model)
         {
-            return "";
+            Console.WriteLine(model.ToString());
         }
-        public string Index(Failed model)
+        private void OnFailed(Failed model)
         {
-            return "";
+            Console.WriteLine(model.ToString());
         }
-        public string Index(Tracking model)
+        private void OnTracking(Tracking model)
         {
-            return "";
+            Console.WriteLine(model.ToString());
         }
-        public string Index(Validation model)
+        private void OnValidation(Validation model)
         {
+            Console.WriteLine(model.ToString());
+        }
+
+#region FormDataToModelCode
+        public string Post([FromBody] FormDataCollection formDataCollection)
+        {
+            
+            if (formDataCollection != null)
+            {
+                var type = formDataCollection.Get("Type");
+                switch (type)
+                {
+                    case "Complaint":
+                         OnComplaint(new Complaint(formDataCollection));
+                        break;
+                    case "Delivered":
+                        OnDelivered(new Delivered(formDataCollection));
+                        break;
+                    case "Failed":
+                        OnFailed(new Failed(formDataCollection));
+                        break;
+                    case "Tracking":
+                        OnTracking(new Tracking(formDataCollection));
+                        break;
+                    case "Validation":
+                        OnValidation(new Validation(formDataCollection));
+                        break;
+                    default:
+                        break;
+                }
+                
+            }
             return _validationKey;
         }
-         
+#endregion   
     }
 }

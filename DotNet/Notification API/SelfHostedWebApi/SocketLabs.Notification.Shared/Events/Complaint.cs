@@ -1,9 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 
 namespace SocketLabs.Notification.Shared.Events
 {
-    public class Complaint
+    public class Complaint : EventBase
     {
+        public Complaint(IEnumerable<KeyValuePair<string, string>> formDataCollection):base (formDataCollection)
+        {
+        }
+
         public Complaint()
         {
             Type = "Complaint";

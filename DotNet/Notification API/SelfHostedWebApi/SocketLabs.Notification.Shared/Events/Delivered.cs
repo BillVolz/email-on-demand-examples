@@ -1,9 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SocketLabs.Notification.Shared.Events
 {
-    public class Delivered
+    public class Delivered : EventBase
     {
+        public Delivered(IEnumerable<KeyValuePair<string, string>> formDataCollection)
+            : base(formDataCollection)
+        {
+        }
+
+        public Delivered()
+        {
+            Type = "Delivered";
+        }
         public string Type { get; set; }
         public DateTime DateTime { get; set; }
         public string MailingId { get; set; }

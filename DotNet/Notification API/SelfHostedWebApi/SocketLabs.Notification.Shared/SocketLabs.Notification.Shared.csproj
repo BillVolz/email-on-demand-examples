@@ -69,6 +69,7 @@
     <Compile Include="EventModelBinder.cs" />
     <Compile Include="Events\Complaint.cs" />
     <Compile Include="Events\Delivered.cs" />
+    <Compile Include="Events\EventBase.cs" />
     <Compile Include="Events\Failed.cs" />
     <Compile Include="Events\Tracking.cs" />
     <Compile Include="Events\Validation.cs" />

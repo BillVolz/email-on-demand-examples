@@ -30,7 +30,8 @@ namespace SocketLabs.Notification.Generator
                 To = "complaints@example.com",
                 UserAgent = "Complaint Processor (example.com)"
             };
-            return _client.PostAsJsonAsync<Complaint>("/api/EmailEvent/", complaint).Result;
+            
+            return _client.PostAsync("/api/EmailEvent/", complaint.ToEncodedContent()).Result;
          
         }
         public HttpResponseMessage SendDelivered(string messageId = "1111", string mailingId = "1111", string address = "test@example.com")
@@ -47,7 +48,7 @@ namespace SocketLabs.Notification.Generator
                 Response = "250 2.6.0 Message received and queued.",
                 LocalIp = "127.0.0.1"
             };
-            return _client.PostAsJsonAsync<Delivered>("/api/EmailEvent/", delivered).Result;
+            return _client.PostAsync("/api/EmailEvent/", delivered.ToEncodedContent()).Result;
 
         }
         public HttpResponseMessage SendFailed(string messageId = "1111", string mailingId = "1111", string address = "test@example.com")
@@ -68,7 +69,7 @@ namespace SocketLabs.Notification.Generator
                 Reason = "550 Requested action not taken: mailbox unavailable",
                 RemoteMta = "mx1.example.com"
             };
-            return _client.PostAsJsonAsync<Failed>("/api/EmailEvent/", failed).Result;
+            return _client.PostAsync("/api/EmailEvent/", failed.ToEncodedContent()).Result;
 
         }
         public HttpResponseMessage SendTracking(string messageId = "1111", string mailingId = "1111", string address = "test@example.com")
@@ -86,7 +87,7 @@ namespace SocketLabs.Notification.Generator
                 Url = "http://www.socketlabs.com",
                 UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36"
             };
-            return _client.PostAsJsonAsync<Tracking>("/api/EmailEvent/", tracking).Result;
+            return _client.PostAsync("/api/EmailEvent/", tracking.ToEncodedContent()).Result;
 
         }
 
@@ -97,7 +98,7 @@ namespace SocketLabs.Notification.Generator
                 ServerId = ServerId,
                 SecretKey = SecretKey
             };
-            return _client.PostAsJsonAsync<Validation>("/api/EmailEvent/", validation).Result;
+            return _client.PostAsync("/api/EmailEvent/", validation.ToEncodedContent()).Result;
 
         }
 

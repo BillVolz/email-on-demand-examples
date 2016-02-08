@@ -1,9 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SocketLabs.Notification.Shared.Events
 {
-    public class Failed
+    public class Failed : EventBase
     {
+        public Failed(IEnumerable<KeyValuePair<string, string>> formDataCollection)
+            : base(formDataCollection)
+        {
+        }
+
+        public Failed()
+        {
+            Type = "Failed";
+        }
         public string Type { get; set; }
         public DateTime DateTime { get; set; }
         public string MailingId { get; set; }
