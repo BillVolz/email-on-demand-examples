@@ -38,11 +38,7 @@ namespace SocketLabs.Notification.SelfHostedWebApi
             //Create the configuration object.
             var config = new HttpSelfHostConfiguration(
                 string.Format("http://localhost:{0}", PortNumber));
-            /*
-            var provider = new SimpleModelBinderProvider(
-            typeof(Complaint), new EventModelBinder());
-            config.Services.Insert(typeof(ModelBinderProvider), 0, provider);
-            */
+           
             //Map routes.  Controlers are in \Controler directory
             //Single EmailEventsController for this project.
             config.Routes.MapHttpRoute(
