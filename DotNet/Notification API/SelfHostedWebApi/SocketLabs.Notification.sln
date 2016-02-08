@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketLabs.Notification.Generator", "SocketLabs.Notification.Generator\SocketLabs.Notification.Generator.csproj", "{C3D72B53-5737-4193-B180-133D508474D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketLabs.Notification.SelfHostedWebApi", "SocketLabs.Notification.SelfHostedWebApi\SocketLabs.Notification.SelfHostedWebApi.csproj", "{F77119AC-06EA-4F90-A5B2-8D5A16D457D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketLabs.Notification.Shared", "SocketLabs.Notification.Shared\SocketLabs.Notification.Shared.csproj", "{831610E0-ECA2-46D9-9643-D82724D6A311}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3D72B53-5737-4193-B180-133D508474D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D72B53-5737-4193-B180-133D508474D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D72B53-5737-4193-B180-133D508474D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D72B53-5737-4193-B180-133D508474D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F77119AC-06EA-4F90-A5B2-8D5A16D457D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F77119AC-06EA-4F90-A5B2-8D5A16D457D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F77119AC-06EA-4F90-A5B2-8D5A16D457D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F77119AC-06EA-4F90-A5B2-8D5A16D457D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{831610E0-ECA2-46D9-9643-D82724D6A311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{831610E0-ECA2-46D9-9643-D82724D6A311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{831610E0-ECA2-46D9-9643-D82724D6A311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{831610E0-ECA2-46D9-9643-D82724D6A311}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
