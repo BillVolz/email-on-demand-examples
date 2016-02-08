@@ -91,7 +91,7 @@ namespace SocketLabs.Notification.Generator
 
         }
 
-        public HttpResponseMessage SendValidation(string messageId = "1111", string mailingId = "1111", string address = "test@example.com")
+        public HttpResponseMessage SendValidation()
         {
             var validation = new Validation()
             {

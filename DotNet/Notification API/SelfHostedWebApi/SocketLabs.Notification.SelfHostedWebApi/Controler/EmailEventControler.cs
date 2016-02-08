@@ -16,7 +16,6 @@ namespace SocketLabs.Notification.SelfHostedWebApi.Controler
         {
            Console.WriteLine(model.ToString());
         }
-
         private void OnDelivered(Delivered model)
         {
             Console.WriteLine(model.ToString());
