@@ -2,8 +2,6 @@
 using System.Configuration;
 using System.Net.Http.Formatting;
 using System.Web.Http;
-using System.Web.Http.ModelBinding;
-using SocketLabs.Notification.Shared;
 using SocketLabs.Notification.Shared.Events;
 
 namespace SocketLabs.Notification.SelfHostedWebApi.Controler
@@ -56,8 +54,6 @@ namespace SocketLabs.Notification.SelfHostedWebApi.Controler
                         break;
                     case "Validation":
                         OnValidation(new Validation(formDataCollection));
-                        break;
-                    default:
                         break;
                 }
                 

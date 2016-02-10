@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Web.Http;
-using System.Web.Http.ModelBinding;
-using System.Web.Http.ModelBinding.Binders;
 using System.Web.Http.SelfHost;
-using SocketLabs.Notification.Shared;
-using SocketLabs.Notification.Shared.Events;
 
 namespace SocketLabs.Notification.SelfHostedWebApi
 {
